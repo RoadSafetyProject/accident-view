@@ -44,7 +44,7 @@ var appControllers = angular.module('appControllers', ['iroad-relation-modal'])
                     }
                 })
             })
-        }
+        };
         $scope.$on('leafletDirectiveMarker.click', function (event, marker) {
             $interval.cancel(marker.model.interval);
             $scope.showDetails(marker.model.event,marker);
