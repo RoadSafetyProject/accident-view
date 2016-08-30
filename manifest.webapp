@@ -1,7 +1,7 @@
 {
     "version": "0.1",
-    "name": "dhis2 app seed",
-    "description": "DHIS 2 App Seed",
+    "name": "Accident View",
+    "description": "Accident View",
     "launch_path": "index.html",
     "icons": {
         "16": "icon.png",
