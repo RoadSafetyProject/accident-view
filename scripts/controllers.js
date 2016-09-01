@@ -49,10 +49,14 @@ var appControllers = angular.module('appControllers', ['iroad-relation-modal'])
             $interval.cancel(marker.model.interval);
             $scope.showDetails(marker.model.event,marker);
         });
-        iRoadModal.getProgramByName($scope.programName).then(function(program) {
-            $scope.program = program;
-            $interval($scope.getAccidents, 1000);
-        });
+
+        dhis2.loadData = function(){
+            iRoadModal.getProgramByName($scope.programName).then(function(program) {
+                $scope.program = program;
+                $interval($scope.getAccidents, 1000);
+            });
+        };
+
         $scope.showDetails = function(event,marker){
             var modalInstance = $uibModal.open({
                 animation: $scope.animationsEnabled,
