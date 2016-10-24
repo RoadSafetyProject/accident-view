@@ -24,7 +24,7 @@ var appControllers = angular.module('appControllers', ['iroad-relation-modal'])
         $scope.markers = {};
         $scope.programName = "Accident";
         $scope.getAccidents = function(){
-            iRoadModal.getAll($scope.programName,$scope.params).then(function(results){
+            iRoadModal.getAll($scope.programName,undefined, {"startDate":(new Date()).toISOString(),"endDate":(new Date()).toISOString()}).then(function (results) {
                 results.forEach(function(event){
                     if(!$scope.markers[event.event]){
                         $scope.markers[event.event] = {
